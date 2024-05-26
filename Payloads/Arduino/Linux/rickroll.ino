@@ -2,7 +2,7 @@
 // Author: Slowdeb
 // Info: 	 Opens rickroll in YouTube
 // Edit:   Change page you want to open in to the target machine
-// OS:	   Linux
+// OS:	    Linux
  
 
 #define HID_CUSTOM_LAYOUT
