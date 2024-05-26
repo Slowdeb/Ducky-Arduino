@@ -1,25 +1,25 @@
 /*
- * Author: Seytonic
- *         https://twitter.com/seytonic
- *         https://www.youtube.com/seytonic
- * GIT:
- *         https://github.com/Seytonic/Duckduino-microSD
- */
+   Author: Slowdeb
+   Credit goes to Seytonic base script (https://github.com/Seytonic/Duckduino-microSD)
+   Upgraded script to run in a diferent language Keyboard layout
+  
+   This script enables you to run Rubber Ducky original scripts. But in this case with a Portuguese layout.
+   For more information on how to change the keyboard layout visit: https://github.com/arduino-libraries/Keyboard/tree/master/src
+*/
 
 #include <SPI.h>
 #include <SD.h>
 #include <string.h>
 #include <Keyboard.h>
-#include <Keyboard_pt_PT.h>
+#include <Keyboard_pt_PT.h> // Change the keyboard name to match your language layout
 
 File myFile;
 boolean first = true;
-String DEFAULT_FILE_NAME = "script.txt";
+String DEFAULT_FILE_NAME = "ducky.txt"; // Rename your scripts to ducky.txt
 
 void setup() {
 
   
-
   if (!SD.begin(4)) {
     return;
   }
@@ -28,11 +28,11 @@ void setup() {
   if (myFile) {
     Keyboard.begin();
     Keyboard.begin(KeyboardLayout_pt_PT); // use the Portuguese layout
-    Keyboard.write(KEY_LEFT_GUILLEMET);
-    Keyboard.write(KEY_ACUTE);
-    Keyboard.write(KEY_C_CEDILLA);
-    Keyboard.write(KEY_MASCULINE_ORDINAL);
-    Keyboard.write(KEY_TILDE);
+    Keyboard.write(KEY_LEFT_GUILLEMET); // special Portuguese characters
+    Keyboard.write(KEY_ACUTE); // special Portuguese characters
+    Keyboard.write(KEY_C_CEDILLA); // special Portuguese characters
+    Keyboard.write(KEY_MASCULINE_ORDINAL); // special Portuguese characters
+    Keyboard.write(KEY_TILDE); // special Portuguese characters
     
     String line = "";
     while (myFile.available()) {
