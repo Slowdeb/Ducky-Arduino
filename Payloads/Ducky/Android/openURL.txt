@@ -1,0 +1,26 @@
+REM Title: Open URL in browser
+REM Author: Slowdeb
+REM info: Opens browser. Navigates to URL.
+REM Target: Android
+
+DELAY 1000
+GUI b
+REM You need this 8 lines of code in case you have to select the browser
+REM If you have a selected default browser you can delete this code
+DELAY 1000
+TAB
+DELAY 500
+ENTER
+DELAY 500
+LEFTARROW
+DELAY 500
+ENTER
+REM End of code, in case you want to delete
+DELAY 5000
+CTRL l
+REM Select URL bar
+DELAY 1000
+REM choose your URL of choice
+STRING https://github.com/Slowdeb
+DELAY 700
+CTRL ENTER
